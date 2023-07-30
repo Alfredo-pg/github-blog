@@ -25,6 +25,11 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 160%;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   button {
     cursor: pointer;
   }

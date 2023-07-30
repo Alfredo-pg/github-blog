@@ -9,7 +9,7 @@ type LinkProps = ComponentProps<typeof LinkContainer> & {
 
 export function Link({ text, ...rest }: LinkProps) {
   return (
-    <LinkContainer {...rest}>
+    <LinkContainer {...rest} >
       {text}
       <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
     </LinkContainer>
