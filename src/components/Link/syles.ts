@@ -1,6 +1,10 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
-export const LinkContainer = styled.a`
+interface LinkProps {
+  variant?: 'arrowLeft'
+}
+
+export const LinkContainer = styled.a<LinkProps>`
   border: none;
   background: none;
   text-decoration: none;
@@ -13,8 +17,8 @@ export const LinkContainer = styled.a`
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  line-height: 160%;
   text-transform: uppercase;
+  line-height: 160%;
 
   svg {
     width: 0.75rem;
@@ -24,4 +28,9 @@ export const LinkContainer = styled.a`
   &:hover {
     border-bottom: 1px solid ${props => props.theme.blue};
   }
+
+  ${props => props.variant === 'arrowLeft' && css`
+    flex-direction: row-reverse;
+    line-height: 0px;
+  `}
 `

@@ -47,11 +47,13 @@ export const ProfileContent = styled.div`
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: auto;
+ 
 
     li {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      color: ${props => props.theme["base-subtitle"]};
 
       svg {
         width: 1.125rem;

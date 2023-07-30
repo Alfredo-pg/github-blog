@@ -1,17 +1,19 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ComponentProps } from "react";
+import { ComponentProps, ReactNode } from "react";
 import { LinkContainer } from "./syles";
 
 type LinkProps = ComponentProps<typeof LinkContainer> & {
   text: string
+  icon?: ReactNode;
+  variant?: 'arrowLeft'
 }
 
-export function Link({ text, ...rest }: LinkProps) {
+export function Link({ text, icon , ...rest }: LinkProps) {
   return (
     <LinkContainer {...rest} >
       {text}
-      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+      {icon ?? <FontAwesomeIcon icon={faArrowUpRightFromSquare} />}
     </LinkContainer>
   )
 }

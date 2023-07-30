@@ -17,7 +17,7 @@ export function Profile() {
           <Link
             text="Github"
             href="https://github.com/Alfredo-pg"
-            target="_blanc" 
+            target="_blank" 
           />
         </header>
 

@@ -1,7 +1,9 @@
+import { PostHeader } from "./components/PostHeader";
+
 export function Post() {
   return (
     <>
-      <h1>Hello World</h1>
+      <PostHeader />
     </>
   )
 }

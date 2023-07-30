@@ -14,6 +14,7 @@ export function Home() {
         <PostCard />
         <PostCard />
         <PostCard />
+        <PostCard />
       </PostsConainer>
     </>
   )
