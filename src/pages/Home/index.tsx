@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { PostCard } from "./components/PostCard";
 import { Profile } from "./components/Profile";
 import { SearchBar } from "./components/SearchBar";
@@ -20,13 +20,13 @@ export interface PostsI {
 export function Home() {
   const [posts, setPosts] = useState<PostsI[]>([])
 
-  async function loadGetPots(query: string = "") {
+  const loadGetPots = useCallback(async (query: string = "") => {
     const response = await api.get(
       `/search/issues?q=${query}%20repo:${'alfredo-pg'}/${'github-blog'}`
     )
 
     setPosts(response.data.items)
-  }
+  }, [])
 
   useEffect(() => {
     loadGetPots()
@@ -35,11 +35,11 @@ export function Home() {
   return (
     <>
       <Profile />
-      <SearchBar />
+      <SearchBar loadGetPots={loadGetPots} postsLength={posts.length} />
 
       <PostsConainer to="/post/1" >
         {posts.map((post) => (
-          <PostCard 
+          <PostCard
             key={post.number}
             post={post}
           />
