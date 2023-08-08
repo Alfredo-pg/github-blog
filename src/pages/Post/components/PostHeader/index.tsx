@@ -4,8 +4,15 @@ import { PostHeaderContainer } from "./styles";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCalendarDay, faChevronLeft, faComment } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { PostsI } from "../../../Home";
+import { dateFormatter } from "../../../../utils/formatter";
 
-export function PostHeader() {
+interface PostHeaderProps {
+  postContent: PostsI
+  isLoading: boolean
+}
+
+export function PostHeader({ postContent, isLoading }: PostHeaderProps) {
   const navigate = useNavigate();
 
   function handleGoBack() {
@@ -14,33 +21,38 @@ export function PostHeader() {
 
   return (
     <PostHeaderContainer>
-      <header>
-        <Link
-          onClick={handleGoBack}
-          icon={<FontAwesomeIcon icon={faChevronLeft} />}
-          text="Voltar" 
-          href="#" 
-          variant="arrowLeft"
-        />
-        <Link text="Ver no github" href="#" target="_blank" />
-      </header>
+      {isLoading ? <></> : (
+        <>
+          <header>
+            <Link
+              onClick={handleGoBack}
+              icon={<FontAwesomeIcon icon={faChevronLeft} />}
+              text="Voltar"
+              href="#"
+              variant="arrowLeft"
+            />
+            <Link text="Ver no github" href={postContent.html_url} target="_blank" />
+          </header>
 
-      <h3>JavaScript data types and data structures</h3>
+          <h3>{postContent.title}</h3>
 
-      <ul>
-        <li>
-          <FontAwesomeIcon icon={faGithub} />
-          Alfredo-pg
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faCalendarDay} />
-          Há 1 dia
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faComment} />
-          5 comentários
-        </li>
-      </ul>
+          <ul>
+            <li>
+              <FontAwesomeIcon icon={faGithub} />
+              {postContent.user.login}
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCalendarDay} />
+              {dateFormatter(postContent.created_at)}
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faComment} />
+              {postContent.comments} comentários
+            </li>
+          </ul>
+        </>
+      )}
+
     </PostHeaderContainer>
   )
 }

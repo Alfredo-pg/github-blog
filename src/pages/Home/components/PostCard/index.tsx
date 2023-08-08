@@ -8,7 +8,7 @@ interface PostProps {
 
 export function PostCard({ post }: PostProps) {
   return (
-    <PostCardContainer>
+    <PostCardContainer to={`/post/${post.number}`}>
       <header>
         <h2>{post.title}</h2>
 

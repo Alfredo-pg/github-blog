@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
-export const PostsConainer = styled(Link)`
+export const PostsConainer = styled.div`
   width: 100%;
   margin-top: 3rem;
   margin-bottom: 3rem;
