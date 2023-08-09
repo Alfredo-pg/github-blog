@@ -1,6 +1,6 @@
-import { PostsI } from "../.."
-import { dateFormatter } from "../../../../utils/formatter"
-import { PostCardContainer } from "./styles"
+import { PostsI } from '../..'
+import { dateFormatter } from '../../../../utils/formatter'
+import { PostCardContainer } from './styles'
 
 interface PostProps {
   post: PostsI
@@ -15,9 +15,7 @@ export function PostCard({ post }: PostProps) {
         <span>{dateFormatter(post.created_at)}</span>
       </header>
 
-        <p>
-          {post.body}
-        </p>
+      <p>{post.body}</p>
     </PostCardContainer>
   )
 }

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const ProfileContainer = styled.section`
   display: flex;
@@ -9,8 +9,8 @@ export const ProfileContainer = styled.section`
   gap: 2rem;
   border-radius: 10px;
 
-  background: ${props => props.theme["base-profile"]};
-  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20);
+  background: ${(props) => props.theme['base-profile']};
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
 
   margin-top: -5.5rem;
 
@@ -25,7 +25,7 @@ export const ProfileContent = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  
+
   header {
     display: flex;
     align-items: center;
@@ -36,10 +36,10 @@ export const ProfileContent = styled.div`
       font-size: 1.5rem;
       font-weight: 700;
       line-height: 130%;
-      color: ${props => props.theme["base-title"]};
+      color: ${(props) => props.theme['base-title']};
     }
   }
-  
+
   ul {
     list-style: none;
 
@@ -47,20 +47,18 @@ export const ProfileContent = styled.div`
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: auto;
- 
 
     li {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: ${props => props.theme["base-subtitle"]};
+      color: ${(props) => props.theme['base-subtitle']};
 
       svg {
         width: 1.125rem;
         height: 1.125rem;
-        color: ${props => props.theme["base-label"]};
+        color: ${(props) => props.theme['base-label']};
       }
     }
   }
-  
 `

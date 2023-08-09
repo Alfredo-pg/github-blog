@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const SearchBarContainer = styled.form`
   flex: 1;
@@ -9,14 +9,14 @@ export const SearchBarContainer = styled.form`
   gap: 0.5rem;
 
   input {
-    background: ${props => props.theme["base-input"]};
-    color: ${props => props.theme["base-text"]};
-    border: 1px solid ${props => props.theme["base-border"]};
+    background: ${(props) => props.theme['base-input']};
+    color: ${(props) => props.theme['base-text']};
+    border: 1px solid ${(props) => props.theme['base-border']};
     border-radius: 6px;
     padding: 0.75rem 1rem;
 
     &::placeholder {
-      color: ${props => props.theme["base-label"]};
+      color: ${(props) => props.theme['base-label']};
     }
   }
 `
@@ -28,13 +28,13 @@ export const SearchBarHeader = styled.header`
 
   h2 {
     font-size: 1.125rem;
-    color: ${props => props.theme["base-subtitle"]};
+    color: ${(props) => props.theme['base-subtitle']};
     font-weight: 700;
   }
 
   span {
     font-size: 0.875rem;
-    color: ${props => props.theme["base-span"]};
+    color: ${(props) => props.theme['base-span']};
     font-weight: 400;
   }
 `

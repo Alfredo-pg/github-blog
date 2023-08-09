@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const PostHeaderContainer = styled.div`
   display: flex;
@@ -8,8 +8,8 @@ export const PostHeaderContainer = styled.div`
   margin-top: -5.5rem;
   padding: 2rem;
   border-radius: 10px;
-  background: ${props => props.theme["base-profile"]};
-  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20);
+  background: ${(props) => props.theme['base-profile']};
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
 
   header {
     width: 100%;
@@ -20,7 +20,7 @@ export const PostHeaderContainer = styled.div`
 
   h3 {
     font-size: 1.5rem;
-    color: ${props => props.theme["base-title"]};
+    color: ${(props) => props.theme['base-title']};
     line-height: 130%;
   }
 
@@ -35,14 +35,14 @@ export const PostHeaderContainer = styled.div`
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      color: ${props => props.theme["base-span"]};
+      color: ${(props) => props.theme['base-span']};
       line-height: 0px;
     }
 
     svg {
       width: 1.125rem;
       height: 1.125rem;
-      color: ${props => props.theme["base-label"]};
+      color: ${(props) => props.theme['base-label']};
     }
   }
 `

@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import { css, styled } from 'styled-components'
 
 interface LinkProps {
   variant?: 'arrowLeft'
@@ -10,7 +10,7 @@ export const LinkContainer = styled.a<LinkProps>`
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: 0.3s;
-  color: ${props => props.theme.blue};
+  color: ${(props) => props.theme.blue};
   font-size: 0.75rem;
   font-weight: 700;
 
@@ -26,11 +26,13 @@ export const LinkContainer = styled.a<LinkProps>`
   }
 
   &:hover {
-    border-bottom: 1px solid ${props => props.theme.blue};
+    border-bottom: 1px solid ${(props) => props.theme.blue};
   }
 
-  ${props => props.variant === 'arrowLeft' && css`
-    flex-direction: row-reverse;
-    line-height: 0px;
-  `}
+  ${(props) =>
+    props.variant === 'arrowLeft' &&
+    css`
+      flex-direction: row-reverse;
+      line-height: 0px;
+    `}
 `

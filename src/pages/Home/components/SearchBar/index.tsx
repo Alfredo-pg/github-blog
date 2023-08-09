@@ -1,5 +1,5 @@
-import { useForm } from "react-hook-form";
-import { SearchBarContainer, SearchBarHeader } from "./syles";
+import { useForm } from 'react-hook-form'
+import { SearchBarContainer, SearchBarHeader } from './syles'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -16,7 +16,7 @@ interface SearchBarProps {
 
 export function SearchBar({ loadGetPots, postsLength }: SearchBarProps) {
   const { register, handleSubmit } = useForm<SearchFormInputs>({
-    resolver: zodResolver(searchFormSchema)
+    resolver: zodResolver(searchFormSchema),
   })
 
   async function handleSearchPosts(data: SearchFormInputs) {
@@ -30,11 +30,7 @@ export function SearchBar({ loadGetPots, postsLength }: SearchBarProps) {
         <span>{postsLength} publicações</span>
       </SearchBarHeader>
 
-      <input
-        type="text"
-        placeholder="Buscar conteúdo"
-        {...register('query')}
-      />
+      <input type="text" placeholder="Buscar conteúdo" {...register('query')} />
     </SearchBarContainer>
   )
 }

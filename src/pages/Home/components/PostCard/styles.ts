@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import { Link } from 'react-router-dom'
+import { styled } from 'styled-components'
 
 export const PostCardContainer = styled(Link)`
   width: 100%;
   height: 16.25rem;
 
-  background: ${props => props.theme["base-post"]};
+  background: ${(props) => props.theme['base-post']};
   border: 2px solid transparent;
   padding: 2rem;
   border-radius: 10px;
   transition: 0.3s;
 
   &:hover {
-    border: 2px solid ${props => props.theme["base-label"]};
+    border: 2px solid ${(props) => props.theme['base-label']};
   }
-  
+
   header {
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@ export const PostCardContainer = styled(Link)`
     h2 {
       flex: 1;
       font-size: 1.25rem;
-      color: ${props => props.theme["base-title"]};
+      color: ${(props) => props.theme['base-title']};
       line-height: 160%;
 
       overflow: hidden;
@@ -37,11 +37,11 @@ export const PostCardContainer = styled(Link)`
     span {
       width: max-content;
       font-size: 0.875rem;
-      color: ${props => props.theme["base-span"]};
+      color: ${(props) => props.theme['base-span']};
     }
   }
 
-  p { 
+  p {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

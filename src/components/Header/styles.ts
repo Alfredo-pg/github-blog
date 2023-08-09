@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 import backgroundImg from '../../assets/background.svg'
 
 export const HeaderContainer = styled.header`
